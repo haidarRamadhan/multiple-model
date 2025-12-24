@@ -5,6 +5,10 @@ import os
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Hello World!"}
+
 print("FILES:", os.listdir("."))
 # Load model
 model = joblib.load("model.joblib")
